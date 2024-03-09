@@ -1,0 +1,20 @@
+{
+  "name": "my-wedding-website",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "bunx --bun astro dev",
+    "start": "bunx --bun astro dev",
+    "build": "bunx --bun astro check && bunx --bun astro build",
+    "preview": "bunx --bun astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^4.4.15",
+    "@astrojs/check": "^0.5.6",
+    "typescript": "^5.4.2"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}
