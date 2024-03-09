@@ -1,4 +1,4 @@
-name: Deploy Vymktg.com Frontend
+name: Deploy Dat & Yen Save The Date Frontend
 
 on:
   # Trigger the workflow every time you push to the `main` branch
