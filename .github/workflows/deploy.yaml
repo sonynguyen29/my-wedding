@@ -15,9 +15,9 @@ permissions:
   pages: write
   id-token: write
 
-defaults:
-  run:
-    working-directory: /
+# defaults:
+#   run:
+#     working-directory: /
 
 jobs:
   build:
