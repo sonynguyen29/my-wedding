@@ -17,7 +17,7 @@ permissions:
 
 defaults:
   run:
-    working-directory: frontend
+    working-directory: /
 
 jobs:
   build:
