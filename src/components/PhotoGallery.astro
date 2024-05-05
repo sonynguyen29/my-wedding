@@ -243,7 +243,9 @@ const result = concatAndShuffleArrays(DALAT_ALBUM, HUE_ALBUM, PHUYEN_ALBUM);
         mixButtons.forEach((item) => {
           item.classList.remove("!border-[#c8a898cc]", "!text-[#c8a898cc]");
         });
-        this.classList.add("!border-[#c8a898cc]", "!text-[#c8a898cc]");
+
+        const element = this as unknown as HTMLElement;
+        element.classList.add("!border-[#c8a898cc]", "!text-[#c8a898cc]");
       },
     },
   });
