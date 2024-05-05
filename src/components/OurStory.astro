@@ -26,11 +26,15 @@ const DATA = [
         <h4 class="text-5xl font-OT">How It Happend</h4>
         <img src="https://nozze-next.netlify.app/_ipx/w_256,q_75/%2F_next%2Fstatic%2Fmedia%2Fsection-title.41f9d59f.png?url=%2F_next%2Fstatic%2Fmedia%2Fsection-title.41f9d59f.png&w=256&q=75" />
     </div>
-    <div class="relative story-timeline flex flex-col gap-24 pt-[8rem]">
-        <div class="round-shape"></div>
+    <div class="relative story-timeline flex flex-col gap-52 md:gap-24 pt-[8rem]">
+        <div class="invisible lg:visible round-shape"></div>
         {DATA.map((item, index) => (
-            <div class={`grid grid-cols-2 ${index === 1 ? 'right' : 'left'}`}>
-                <div class={`${index === 1 ? 'order-1 pl-20 pr-36' : 'pr-20 pl-36'}`}>
+            <div class={`grid grid-cols-1 lg:grid-cols-2 ${index === 1 ? 'right' : 'left'}`}>
+                <div class:list={[
+                    'mx-auto mb-20 lg:mb-0',
+                    `${index === 1 ? 'lg:order-1 lg:pl-20 lg:pr-36' : 'lg:pr-20 lg:pl-36'}`,
+                    
+                ]}>
                     <div class={`img-holder relative max-w-[330px] ${index === 1 ? 'mr-auto' : 'ml-auto'}`}> 
                         <img class="ml-auto" width="350" height="450" src={item.image} />
                         {index === 0 && (
@@ -59,22 +63,26 @@ const DATA = [
                         )}
                     </div>
                 </div>
-                <div class={`relative ${index === 1 ? 'pr-20 pl-36' : 'pl-20 pr-36'}`}>
-                    <span class="heart flex justify-center items-center">
+                <div class:list={[
+                    `relative`,
+                    `${index === 1 ? 'lg:pr-20 lg:pl-36' : 'lg:pl-20 lg:pr-36'}`,
+                    `sm:mx-10 text-center md:mx-0`
+                ]}>
+                    <span class="heart hidden lg:flex justify-center items-center">
                         <ion-icon class="text-[#5d7c78] text-3xl" name="heart"></ion-icon>
                     </span>
-                    <div class={`flex flex-col justify-center ${index === 1 ? 'items-end' : 'item-start'} gap-5 h-full`}>
+                    <div class={`flex flex-col justify-center items-center ${index === 1 ? 'lg:items-end' : 'lg:item-start'} gap-5 h-full`}>
                         <div>
                             <div class="text-[#c8a898] text-lg mb-3">{item.time}</div>
                             <div class="text-5xl font-OT">{item.title}</div>
                         </div>
-                        <div class={`text-lg font-light ${index === 1 ? 'text-right' : 'text-left'}`}>{item.description}</div>
+                        <div class={`text-lg font-light text-center ${index === 1 ? 'lg:text-right' : 'lg:text-left'}`}>{item.description}</div>
                     </div>
                 </div>
             </div>
         ))}
         <div class="relative">
-            <div class="round-shape"></div>
+            <div class="invisible lg:visible round-shape"></div>
         </div>
     </div>
 </div>
@@ -145,8 +153,8 @@ const DATA = [
         background: #5d7c78;
         border-radius: 50%;
     }
-
-    .story-timeline:after { 
+    @media screen and (min-width: 1024px) {
+        .story-timeline:after { 
         content: "";
         background: #cee0ef;
         width: 2px;
@@ -155,5 +163,6 @@ const DATA = [
         left: 50%;
         top: 0;
         transform: translateX(-50%);
+    }
     }
 </style>

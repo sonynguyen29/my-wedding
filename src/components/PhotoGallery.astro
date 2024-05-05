@@ -1,37 +1,250 @@
 ---
+const DALAT_ALBUM = [
+  {
+    src: "https://nozze-next.netlify.app/_ipx/w_1920,q_75/%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg?url=%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg&w=1920&q=75",
+    tag: "dalat",
+  },
+  {
+    src: "https://nozze-next.netlify.app/_ipx/w_1920,q_75/%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg?url=%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg&w=1920&q=75",
+    tag: "dalat",
+  },
+  {
+    src: "https://nozze-next.netlify.app/_ipx/w_1920,q_75/%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg?url=%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg&w=1920&q=75",
+    tag: "dalat",
+  },
+  {
+    src: "https://nozze-next.netlify.app/_ipx/w_1920,q_75/%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg?url=%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg&w=1920&q=75",
+    tag: "dalat",
+  },
+  {
+    src: "https://nozze-next.netlify.app/_ipx/w_1920,q_75/%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg?url=%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg&w=1920&q=75",
+    tag: "dalat",
+  },
+];
 
+const HUE_ALBUM = [
+  {
+    src: "https://nozze-next.netlify.app/_ipx/w_750,q_75/%2F_next%2Fstatic%2Fmedia%2F6.c160b150.jpg?url=%2F_next%2Fstatic%2Fmedia%2F6.c160b150.jpg&w=750&q=75",
+    tag: "hue",
+  },
+  {
+    src: "https://nozze-next.netlify.app/_ipx/w_750,q_75/%2F_next%2Fstatic%2Fmedia%2F6.c160b150.jpg?url=%2F_next%2Fstatic%2Fmedia%2F6.c160b150.jpg&w=750&q=75",
+    tag: "hue",
+  },
+  {
+    src: "https://nozze-next.netlify.app/_ipx/w_750,q_75/%2F_next%2Fstatic%2Fmedia%2F6.c160b150.jpg?url=%2F_next%2Fstatic%2Fmedia%2F6.c160b150.jpg&w=750&q=75",
+    tag: "hue",
+  },
+  {
+    src: "https://nozze-next.netlify.app/_ipx/w_750,q_75/%2F_next%2Fstatic%2Fmedia%2F6.c160b150.jpg?url=%2F_next%2Fstatic%2Fmedia%2F6.c160b150.jpg&w=750&q=75",
+    tag: "hue",
+  },
+  {
+    src: "https://nozze-next.netlify.app/_ipx/w_750,q_75/%2F_next%2Fstatic%2Fmedia%2F6.c160b150.jpg?url=%2F_next%2Fstatic%2Fmedia%2F6.c160b150.jpg&w=750&q=75",
+    tag: "hue",
+  },
+  {
+    src: "https://nozze-next.netlify.app/_ipx/w_750,q_75/%2F_next%2Fstatic%2Fmedia%2F6.c160b150.jpg?url=%2F_next%2Fstatic%2Fmedia%2F6.c160b150.jpg&w=750&q=75",
+    tag: "hue",
+  },
+];
+
+const PHUYEN_ALBUM = [
+  {
+    src: "https://nozze-next.netlify.app/_ipx/w_1920,q_75/%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg?url=%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg&w=1920&q=75",
+    tag: "tuyhoa",
+  },
+  {
+    src: "https://nozze-next.netlify.app/_ipx/w_1920,q_75/%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg?url=%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg&w=1920&q=75",
+    tag: "tuyhoa",
+  },
+  {
+    src: "https://nozze-next.netlify.app/_ipx/w_1920,q_75/%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg?url=%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg&w=1920&q=75",
+    tag: "tuyhoa",
+  },
+  {
+    src: "https://nozze-next.netlify.app/_ipx/w_1920,q_75/%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg?url=%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg&w=1920&q=75",
+    tag: "tuyhoa",
+  },
+  {
+    src: "https://nozze-next.netlify.app/_ipx/w_1920,q_75/%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg?url=%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg&w=1920&q=75",
+    tag: "tuyhoa",
+  },
+  {
+    src: "https://nozze-next.netlify.app/_ipx/w_1920,q_75/%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg?url=%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg&w=1920&q=75",
+    tag: "tuyhoa",
+  },
+];
+
+const TAG_LIST: any[] = [
+  {
+    tagId: "all",
+    tag: "All",
+  },
+  {
+    tagId: "dalat",
+    tag: "Da Lat - Lam Dong",
+  },
+  {
+    tagId: "hue",
+    tag: "Hue",
+  },
+  {
+    tagId: "tuyhoa",
+    tag: "Tuy Hoa - Phu Yen",
+  },
+];
+
+const shuffleArray = (array: any[]) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
+
+const concatAndShuffleArrays = (arr1: any[], arr2: any[], arr3: any[]) => {
+  const concatenatedArray = [...arr1, ...arr2, ...arr3];
+  const shuffledArray = shuffleArray(concatenatedArray);
+  return shuffledArray;
+};
+
+// Concatenate and shuffle arrays
+const result = concatAndShuffleArrays(DALAT_ALBUM, HUE_ALBUM, PHUYEN_ALBUM);
 ---
+
 <div>
-    <div class="relative flex min-h-screen flex-col justify-center py-6 sm:py-12">
-        <div  class="columns-2 lg:columns-4 [column-fill:_balance] box-border mx-auto before:box-inherit after:box-inherit">
-          <div class="break-inside-avoid bg-gray-100 rounded-lg">
-             <img class="p-2 2xl:p-4" src="https://nozze-next.netlify.app/_ipx/w_1920,q_75/%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg?url=%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg&w=1920&q=75" />
-          </div>
-          <div class="break-inside-avoid bg-gray-100 rounded-lg">
-             <img class="p-2 2xl:p-4" src="https://nozze-next.netlify.app/_ipx/w_750,q_75/%2F_next%2Fstatic%2Fmedia%2F1.93171274.jpg?url=%2F_next%2Fstatic%2Fmedia%2F1.93171274.jpg&w=750&q=75" />
-             <img class="p-2 2xl:p-4" src="https://nozze-next.netlify.app/_ipx/w_750,q_75/%2F_next%2Fstatic%2Fmedia%2F2.3ae9e934.jpg?url=%2F_next%2Fstatic%2Fmedia%2F2.3ae9e934.jpg&w=750&q=75" />
-             <img class="p-2 2xl:p-4" src="https://preview.themeforest.net/item/nozze-wedding-wedding-planner-next-js-template/full_screen_preview/46154966?_ga=2.43618789.1331195487.1709998584-567382169.1682342670&_gac=1.154121546.1709998584.Cj0KCQiArrCvBhCNARIsAOkAGcUpJSXWqyaynF7R7vyDuuBPQ1xZGrlK9pLBSzN96FTMfbyBNokWvGkaAvzEEALw_wcB" />
-             <img class="p-2 2xl:p-4" src="https://nozze-next.netlify.app/_ipx/w_750,q_75/%2F_next%2Fstatic%2Fmedia%2F4.28eff322.jpg?url=%2F_next%2Fstatic%2Fmedia%2F4.28eff322.jpg&w=750&q=75" />
-          </div>
-          <div class="break-inside-avoid bg-gray-100 rounded-lg">
-            <img class="p-2 2xl:p-4" src="https://nozze-next.netlify.app/_ipx/w_750,q_75/%2F_next%2Fstatic%2Fmedia%2F5.e9ce7114.jpg?url=%2F_next%2Fstatic%2Fmedia%2F5.e9ce7114.jpg&w=750&q=75" />
-            <img class="p-2 2xl:p-4" src="https://nozze-next.netlify.app/_ipx/w_1920,q_75/%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg?url=%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg&w=1920&q=75" />
-            <img class="p-2 2xl:p-4" src="https://nozze-next.netlify.app/_ipx/w_1920,q_75/%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg?url=%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg&w=1920&q=75" />
-            <img class="p-2 2xl:p-4" src="https://nozze-next.netlify.app/_ipx/w_1920,q_75/%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg?url=%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg&w=1920&q=75" />
-          </div>
-          <div class="break-inside-avoid bg-gray-100 rounded-lg">
-            <img class="p-2 2xl:p-4" src="https://nozze-next.netlify.app/_ipx/w_750,q_75/%2F_next%2Fstatic%2Fmedia%2F6.c160b150.jpg?url=%2F_next%2Fstatic%2Fmedia%2F6.c160b150.jpg&w=750&q=75" />
-            <img class="p-2 2xl:p-4" src="https://nozze-next.netlify.app/_ipx/w_750,q_75/%2F_next%2Fstatic%2Fmedia%2F6.c160b150.jpg?url=%2F_next%2Fstatic%2Fmedia%2F6.c160b150.jpg&w=750&q=75" />
-            <img class="p-2 2xl:p-4" src="https://nozze-next.netlify.app/_ipx/w_1920,q_75/%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg?url=%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg&w=1920&q=75" />
-            <img class="p-2 2xl:p-4" src="https://preview.themeforest.net/item/nozze-wedding-wedding-planner-next-js-template/full_screen_preview/46154966?_ga=2.43618789.1331195487.1709998584-567382169.1682342670&_gac=1.154121546.1709998584.Cj0KCQiArrCvBhCNARIsAOkAGcUpJSXWqyaynF7R7vyDuuBPQ1xZGrlK9pLBSzN96FTMfbyBNokWvGkaAvzEEALw_wcB" />
-            <img class="p-2 2xl:p-4" src="https://nozze-next.netlify.app/_ipx/w_750,q_75/%2F_next%2Fstatic%2Fmedia%2F5.e9ce7114.jpg?url=%2F_next%2Fstatic%2Fmedia%2F5.e9ce7114.jpg&w=750&q=75" />
-          </div>
-          <div class="break-inside-avoid bg-gray-100 rounded-lg">
-            <img class="p-2 2xl:p-4" src="https://nozze-next.netlify.app/_ipx/w_750,q_75/%2F_next%2Fstatic%2Fmedia%2F5.e9ce7114.jpg?url=%2F_next%2Fstatic%2Fmedia%2F5.e9ce7114.jpg&w=750&q=75" />
-            <img class="p-2 2xl:p-4" src="https://nozze-next.netlify.app/_ipx/w_1920,q_75/%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg?url=%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg&w=1920&q=75" />
-            <img class="p-2 2xl:p-4" src="https://nozze-next.netlify.app/_ipx/w_1920,q_75/%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg?url=%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg&w=1920&q=75" />
-            <img class="p-2 2xl:p-4" src="https://nozze-next.netlify.app/_ipx/w_1920,q_75/%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg?url=%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg&w=1920&q=75" />
-          </div>
+  <div class="flex flex-row justify-center items-center gap-9 my-5 flex-wrap">
+    {
+      TAG_LIST.map(({ tagId, tag }) => (
+        <div
+          data-filter={tagId === "all" ? "all" : `.${tagId}`}
+          class={`mix-button capitalize px-1 py-2 border-b-2 border-white font-medium cursor-pointer hover:border-b-2 hover:border-[#c8a898cc] hover:text-[#c8a898cc] transition-all duration-300${
+            tagId === "all" ? " !border-[#c8a898cc] !text-[#c8a898cc]" : ""
+          }`}
+        >
+          {tag}
+        </div>
+      ))
+    }
+  </div>
+  <div
+    class="mixitup-container grid md:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-16 mt-10"
+  >
+    {
+      result.map((item) => (
+        <img class:list={[item.tag, "mix"]} src={item.src} alt="" />
+      ))
+    }
+  </div>
+
+  <div
+    class="relative min-h-screen flex-col justify-center py-6 sm:py-12 hidden"
+  >
+    <div
+      class="columns-2 lg:columns-4 [column-fill:_balance] box-border mx-auto before:box-inherit after:box-inherit"
+    >
+      <div class="break-inside-avoid bg-gray-100 rounded-lg">
+        <img
+          class="p-2 2xl:p-4"
+          src="https://nozze-next.netlify.app/_ipx/w_1920,q_75/%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg?url=%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg&w=1920&q=75"
+        />
       </div>
+      <div class="break-inside-avoid bg-gray-100 rounded-lg">
+        <img
+          class="p-2 2xl:p-4"
+          src="https://nozze-next.netlify.app/_ipx/w_750,q_75/%2F_next%2Fstatic%2Fmedia%2F1.93171274.jpg?url=%2F_next%2Fstatic%2Fmedia%2F1.93171274.jpg&w=750&q=75"
+        />
+        <img
+          class="p-2 2xl:p-4"
+          src="https://nozze-next.netlify.app/_ipx/w_750,q_75/%2F_next%2Fstatic%2Fmedia%2F2.3ae9e934.jpg?url=%2F_next%2Fstatic%2Fmedia%2F2.3ae9e934.jpg&w=750&q=75"
+        />
+        <img
+          class="p-2 2xl:p-4"
+          src="https://preview.themeforest.net/item/nozze-wedding-wedding-planner-next-js-template/full_screen_preview/46154966?_ga=2.43618789.1331195487.1709998584-567382169.1682342670&_gac=1.154121546.1709998584.Cj0KCQiArrCvBhCNARIsAOkAGcUpJSXWqyaynF7R7vyDuuBPQ1xZGrlK9pLBSzN96FTMfbyBNokWvGkaAvzEEALw_wcB"
+        />
+        <img
+          class="p-2 2xl:p-4"
+          src="https://nozze-next.netlify.app/_ipx/w_750,q_75/%2F_next%2Fstatic%2Fmedia%2F4.28eff322.jpg?url=%2F_next%2Fstatic%2Fmedia%2F4.28eff322.jpg&w=750&q=75"
+        />
       </div>
+      <div class="break-inside-avoid bg-gray-100 rounded-lg">
+        <img
+          class="p-2 2xl:p-4"
+          src="https://nozze-next.netlify.app/_ipx/w_750,q_75/%2F_next%2Fstatic%2Fmedia%2F5.e9ce7114.jpg?url=%2F_next%2Fstatic%2Fmedia%2F5.e9ce7114.jpg&w=750&q=75"
+        />
+        <img
+          class="p-2 2xl:p-4"
+          src="https://nozze-next.netlify.app/_ipx/w_1920,q_75/%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg?url=%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg&w=1920&q=75"
+        />
+        <img
+          class="p-2 2xl:p-4"
+          src="https://nozze-next.netlify.app/_ipx/w_1920,q_75/%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg?url=%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg&w=1920&q=75"
+        />
+        <img
+          class="p-2 2xl:p-4"
+          src="https://nozze-next.netlify.app/_ipx/w_1920,q_75/%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg?url=%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg&w=1920&q=75"
+        />
+      </div>
+      <div class="break-inside-avoid bg-gray-100 rounded-lg">
+        <img
+          class="p-2 2xl:p-4"
+          src="https://nozze-next.netlify.app/_ipx/w_750,q_75/%2F_next%2Fstatic%2Fmedia%2F6.c160b150.jpg?url=%2F_next%2Fstatic%2Fmedia%2F6.c160b150.jpg&w=750&q=75"
+        />
+        <img
+          class="p-2 2xl:p-4"
+          src="https://nozze-next.netlify.app/_ipx/w_750,q_75/%2F_next%2Fstatic%2Fmedia%2F6.c160b150.jpg?url=%2F_next%2Fstatic%2Fmedia%2F6.c160b150.jpg&w=750&q=75"
+        />
+        <img
+          class="p-2 2xl:p-4"
+          src="https://nozze-next.netlify.app/_ipx/w_1920,q_75/%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg?url=%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg&w=1920&q=75"
+        />
+        <img
+          class="p-2 2xl:p-4"
+          src="https://preview.themeforest.net/item/nozze-wedding-wedding-planner-next-js-template/full_screen_preview/46154966?_ga=2.43618789.1331195487.1709998584-567382169.1682342670&_gac=1.154121546.1709998584.Cj0KCQiArrCvBhCNARIsAOkAGcUpJSXWqyaynF7R7vyDuuBPQ1xZGrlK9pLBSzN96FTMfbyBNokWvGkaAvzEEALw_wcB"
+        />
+        <img
+          class="p-2 2xl:p-4"
+          src="https://nozze-next.netlify.app/_ipx/w_750,q_75/%2F_next%2Fstatic%2Fmedia%2F5.e9ce7114.jpg?url=%2F_next%2Fstatic%2Fmedia%2F5.e9ce7114.jpg&w=750&q=75"
+        />
+      </div>
+      <div class="break-inside-avoid bg-gray-100 rounded-lg">
+        <img
+          class="p-2 2xl:p-4"
+          src="https://nozze-next.netlify.app/_ipx/w_750,q_75/%2F_next%2Fstatic%2Fmedia%2F5.e9ce7114.jpg?url=%2F_next%2Fstatic%2Fmedia%2F5.e9ce7114.jpg&w=750&q=75"
+        />
+        <img
+          class="p-2 2xl:p-4"
+          src="https://nozze-next.netlify.app/_ipx/w_1920,q_75/%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg?url=%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg&w=1920&q=75"
+        />
+        <img
+          class="p-2 2xl:p-4"
+          src="https://nozze-next.netlify.app/_ipx/w_1920,q_75/%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg?url=%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg&w=1920&q=75"
+        />
+        <img
+          class="p-2 2xl:p-4"
+          src="https://nozze-next.netlify.app/_ipx/w_1920,q_75/%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg?url=%2F_next%2Fstatic%2Fmedia%2F3.884c9e49.jpg&w=1920&q=75"
+        />
+      </div>
+    </div>
+  </div>
 </div>
+
+<script>
+  import mixitup from "mixitup";
+
+  var mixer = mixitup(".mixitup-container", {
+    animation: {
+      duration: 700,
+    },
+    callbacks: {
+      onMixClick: function (state: any, originalEvent: any) {
+        const mixButtons = document.querySelectorAll(".mix-button");
+        mixButtons.forEach((item) => {
+          item.classList.remove("!border-[#c8a898cc]", "!text-[#c8a898cc]");
+        });
+        this.classList.add("!border-[#c8a898cc]", "!text-[#c8a898cc]");
+      },
+    },
+  });
+</script>
