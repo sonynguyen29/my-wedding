@@ -53,7 +53,7 @@ const tuyHoaImages = await Astro.glob("../assets/images/gallery/tuyhoa/*").then(
   },
 );
 
-const getRandomItems = (arr, count) => {
+const getRandomItems = (arr: any[], count: number) => {
   // Shuffle the array
   const shuffled = arr.sort(() => Math.random() - 0.5);
   // Return the first 'count' items
