@@ -80,15 +80,13 @@ const concatAndShuffleArrays = (
 
 // Concatenate and shuffle arrays
 const result = concatAndShuffleArrays(
-  //getRandomItems(daLatImages, 15),
-  daLatImages,
-  hueImages,
-  tuyHoaImages,
-  //getRandomItems(tuyHoaImages, 15),
+  getRandomItems(hueImages, 15),
+  getRandomItems(daLatImages, 15),
+  getRandomItems(tuyHoaImages, 15),
 );
 ---
 
-<div>
+<div class="mt-44">
   <div class="flex flex-row justify-center items-center gap-9 my-5 flex-wrap">
     {
       TAG_LIST.map(({ tagId, tag }) => (
@@ -107,7 +105,7 @@ const result = concatAndShuffleArrays(
     class="mixitup-container grid md:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-2 mt-10 max-h-[100rem] overflow-scroll"
   >
     {
-      result.map((item) => (
+      result.map((item, index) => (
         <Image class:list={[item.tag, "mix"]} src={item} alt="" />
       ))
     }
