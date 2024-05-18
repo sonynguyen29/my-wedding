@@ -86,7 +86,7 @@ const result = concatAndShuffleArrays(
 );
 ---
 
-<div class="mt-44">
+<div>
   <div class="flex flex-row justify-center items-center gap-9 my-5 flex-wrap">
     {
       TAG_LIST.map(({ tagId, tag }) => (
@@ -110,25 +110,25 @@ const result = concatAndShuffleArrays(
       ))
     }
   </div>
-</div>
 
-<script>
-  import mixitup from "mixitup";
+  <script>
+    import mixitup from "mixitup";
 
-  var mixer = mixitup(".mixitup-container", {
-    animation: {
-      duration: 700,
-    },
-    callbacks: {
-      onMixClick: function (state: any, originalEvent: any) {
-        const mixButtons = document.querySelectorAll(".mix-button");
-        mixButtons.forEach((item) => {
-          item.classList.remove("!border-[#c8a898cc]", "!text-[#c8a898cc]");
-        });
-
-        const element = this as unknown as HTMLElement;
-        element.classList.add("!border-[#c8a898cc]", "!text-[#c8a898cc]");
+    var mixer = mixitup(".mixitup-container", {
+      animation: {
+        duration: 700,
       },
-    },
-  });
-</script>
+      callbacks: {
+        onMixClick: function (state: any, originalEvent: any) {
+          const mixButtons = document.querySelectorAll(".mix-button");
+          mixButtons.forEach((item) => {
+            item.classList.remove("!border-[#c8a898cc]", "!text-[#c8a898cc]");
+          });
+
+          const element = this as unknown as HTMLElement;
+          element.classList.add("!border-[#c8a898cc]", "!text-[#c8a898cc]");
+        },
+      },
+    });
+  </script>
+</div>

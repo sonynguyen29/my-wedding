@@ -1,0 +1,112 @@
+---
+import "@splidejs/splide/css/core";
+import "@splidejs/splide/css";
+import Splide from "@splidejs/splide";
+import AGENDA_1 from "../assets/images/gallery/hue/_VPH3365.jpg";
+import AGENDA_2 from "../assets/images/gallery/dalat/3P4A1306.jpg";
+import { Image } from "astro:assets";
+
+const AGENDA = [
+  {
+    name: "Lễ Vu Quy",
+    time: "Chủ nhật, 07 Tháng 7, 2024",
+    clock: "11:00 AM - 14:00 PM",
+    room: "Sảnh SKYHALL (Tầng 3),",
+    address:
+      "Khách Sạn Đồng Nai, 57 Phạm Văn Thuận, P Tân Tiến, TP. Biên Hòa, Đồng Nai",
+    google_url: "https://maps.app.goo.gl/ghcQercMGE7ZCcY36",
+    phone: "0989 053 457",
+  },
+  {
+    name: "Lễ Thành Hôn",
+    time: "Thứ 7, 13 Tháng 7, 2024",
+    clock: "10:30 AM - 14:00 PM",
+    room: "Sảnh Grand Jasmine,",
+    address: "Pytopia, Đại Lộ Hùng Vương, P.5, TP. Tuy Hòa, Phú Yên",
+    google_url: "https://maps.app.goo.gl/2yrXWQxBxGyNoByv7",
+    phone: "0941 718 529",
+  },
+];
+---
+
+<section id="agenda" class="mt-40 md:mt-32 flex flex-col gap-12">
+  <div class="w-full flex flex-col justify-center items-center gap-5">
+    <span class="font-petit text-3xl">Our Wedding</span>
+    <span class="font-OT text-5xl">Lịch Trình Sự Kiện</span>
+    <img
+      src="https://nozze-next.netlify.app/_ipx/w_256,q_75/%2F_next%2Fstatic%2Fmedia%2Fsection-title.41f9d59f.png?url=%2F_next%2Fstatic%2Fmedia%2Fsection-title.41f9d59f.png&w=256&q=75"
+    />
+  </div>
+  <div class="splide">
+    <div class="splide__track">
+      <div class="splide__list">
+        {
+          AGENDA.map(
+            (
+              { name, time, clock, room, address, google_url, phone },
+              index,
+            ) => (
+              <div class="splide__slide relative w-full cursor-pointer">
+                <Image
+                  class="lg:max-h-[700px] object-cover"
+                  src={index === 0 ? AGENDA_1 : AGENDA_2}
+                  alt=""
+                />
+                <div class="lg:absolute right-5 bottom-5 top-5 bg-white lg:max-w-[400px] p-12 border border-[#c8a898] lg:border-0">
+                  <div class="flex flex-col gap-7 items-center justify-center h-full">
+                    <h2 class="name relative pb-10 text-4xl font-OT">{name}</h2>
+                    <p class="text-base sm:text-lg">{time}</p>
+                    <p class="text-base sm:text-lg">{clock}</p>
+                    <div>
+                      <p class="text-center text-base sm:text-lg">{room}</p>
+                      <p class="text-center text-base sm:text-lg sm:max-w-1/2">
+                        {address}
+                      </p>
+                    </div>
+                    <a
+                      href={google_url}
+                      class="text-base sm:text-lg font-semibold text-[#c8a898] border-b-4 border-b-[#c8a898] transition duration-300 p-3 hover:bg-[#c8a898] hover:text-white"
+                    >
+                      Xem Vị Trí
+                    </a>
+                    <a href={`tel:${phone}`} class="text-base sm:text-lg">
+                      {phone}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ),
+          )
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #agenda .name::after {
+    position: absolute;
+    left: 50%;
+    bottom: 0px;
+    width: 80px;
+    height: 5px;
+    content: "";
+    transform: translateX(-50%);
+    background: rgb(93, 124, 120);
+  }
+</style>
+
+<script>
+  import Splide from "@splidejs/splide";
+
+  const partnerSlider = new Splide(".splide", {
+    type: "loop",
+    perPage: 1,
+    arrows: false,
+    autoplay: true,
+    interval: 2000,
+    gap: 20,
+  });
+
+  partnerSlider.mount();
+</script>
