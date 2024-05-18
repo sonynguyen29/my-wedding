@@ -1,6 +1,8 @@
 name: Deploy Dat & Yen Save The Date Frontend
 
 on:
+  schedule:
+    - cron: '0,30 9-17 * * *'
   # Trigger the workflow every time you push to the `main` branch
   # Using a different branch name? Replace `main` with your branch’s name
   push:
