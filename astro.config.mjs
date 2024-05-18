@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig, passthroughImageService } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import { fileURLToPath } from 'url';
 
@@ -9,6 +9,10 @@ export default defineConfig({
             configFile: fileURLToPath(new URL('./tailwind.config.mjs', import.meta.url)),
         }),
     ],
-    site: 'https://sonynguyen29.github.io/',
-    base: import.meta.env.PROD ? "/my-wedding" : "",
+    experimental: { optimizeHoistedScript: true },
+    image: {
+        service: passthroughImageService(),
+    },
+    site: 'https://wedding.datyen.com/',
+    base: import.meta.env.BASE_URL,
 });

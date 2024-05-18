@@ -20,23 +20,23 @@ const TAG_LIST: any[] = [
   },
 ];
 
-const daLatImages = await Astro.glob("../assets/images/gallery/dalat/*").then(
-  (files) => {
-    return files.map((file) => {
-      return {
-        ...file.default,
-        tag: "dalat",
-      };
-    });
-  },
-);
-
 const hueImages = await Astro.glob("../assets/images/gallery/hue/*").then(
   (files) => {
     return files.map((file) => {
       return {
         ...file.default,
         tag: "hue",
+      };
+    });
+  },
+);
+
+const daLatImages = await Astro.glob("../assets/images/gallery/dalat/*").then(
+  (files) => {
+    return files.map((file) => {
+      return {
+        ...file.default,
+        tag: "dalat",
       };
     });
   },
@@ -68,7 +68,11 @@ const shuffleArray = (array: any[]) => {
   return array;
 };
 
-const concatAndShuffleArrays = (arr1: any[], arr2: any[], arr3: any[]) => {
+const concatAndShuffleArrays = (
+  arr1: any[] = [],
+  arr2: any[] = [],
+  arr3: any[] = [],
+) => {
   const concatenatedArray = [...arr1, ...arr2, ...arr3];
   const shuffledArray = shuffleArray(concatenatedArray);
   return shuffledArray;
@@ -76,9 +80,11 @@ const concatAndShuffleArrays = (arr1: any[], arr2: any[], arr3: any[]) => {
 
 // Concatenate and shuffle arrays
 const result = concatAndShuffleArrays(
-  getRandomItems(daLatImages, 15),
-  getRandomItems(hueImages, 15),
-  getRandomItems(tuyHoaImages, 15),
+  //getRandomItems(daLatImages, 15),
+  daLatImages,
+  hueImages,
+  tuyHoaImages,
+  //getRandomItems(tuyHoaImages, 15),
 );
 ---
 
