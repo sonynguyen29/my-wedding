@@ -52,7 +52,6 @@ const AGENDA = [
                     class:list={["w-full h-full object-cover"]}
                     src={index === 0 ? AGENDA_1 : AGENDA_2}
                     alt=""
-                    style={`object-position: top -6.5cm right 0;`}
                   />
                 </div>
                 <div class="lg:absolute right-5 bottom-5 top-5 bg-white lg:max-w-[400px] p-12 border border-[#c8a898] lg:border-0">
@@ -96,6 +95,12 @@ const AGENDA = [
     content: "";
     transform: translateX(-50%);
     background: rgb(93, 124, 120);
+  }
+
+  @media screen and (min-width: 1024px) {
+    .splide__slide img {
+      object-position: top -6.5cm right 0;
+    }
   }
 </style>
 
