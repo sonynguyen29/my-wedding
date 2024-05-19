@@ -1,22 +1,26 @@
 ---
+import { Image } from "astro:assets";
+import STEP_1 from "./../assets/images/step_1.png";
+import STEP_2 from "./../assets/images/step_2.png";
+import STEP_3 from "./../assets/images/step_3.png";
 const DATA = [
     {
         "time": "22 Feb, 2019",
         "title": "How we meet",
         "description": "Consectetur adipiscing elit. Fringilla at risus orci, tempus facilisi sed. Enim tortor, faucibus netus orci donec volutpat adipiscing. Sit condimentum elit convallis libero. Nunc in eu tellus ipsum placerat.",
-        "image": "https://nozze-next.netlify.app/_ipx/w_750,q_75/%2F_next%2Fstatic%2Fmedia%2F1.7741b298.jpg?url=%2F_next%2Fstatic%2Fmedia%2F1.7741b298.jpg&w=750&q=75",
+        "image": STEP_1,
     },
     {
         "time": "22 Feb, 2019",
         "title": "How we meet",
         "description": "Consectetur adipiscing elit. Fringilla at risus orci, tempus facilisi sed. Enim tortor, faucibus netus orci donec volutpat adipiscing. Sit condimentum elit convallis libero. Nunc in eu tellus ipsum placerat.",
-        "image": "https://nozze-next.netlify.app/_ipx/w_750,q_75/%2F_next%2Fstatic%2Fmedia%2F1.7741b298.jpg?url=%2F_next%2Fstatic%2Fmedia%2F1.7741b298.jpg&w=750&q=75",
+        "image": STEP_2,
     },
     {
         "time": "22 Feb, 2019",
         "title": "How we meet",
         "description": "Consectetur adipiscing elit. Fringilla at risus orci, tempus facilisi sed. Enim tortor, faucibus netus orci donec volutpat adipiscing. Sit condimentum elit convallis libero. Nunc in eu tellus ipsum placerat.",
-        "image": "https://nozze-next.netlify.app/_ipx/w_750,q_75/%2F_next%2Fstatic%2Fmedia%2F1.7741b298.jpg?url=%2F_next%2Fstatic%2Fmedia%2F1.7741b298.jpg&w=750&q=75",
+        "image": STEP_3,
     }
 ]
 ---
@@ -36,7 +40,7 @@ const DATA = [
                     
                 ]}>
                     <div class={`img-holder relative max-w-[330px] ${index === 1 ? 'mr-auto' : 'ml-auto'}`}> 
-                        <img class="ml-auto" width="350" height="450" src={item.image} />
+                        <Image src={item.image} alt="" class="ml-auto w-[350px] h-[450px] object-cover" />
                         {index === 0 && (
                             <div class="absolute top-[-80px] left-[-80px] z-[-1]">
                                 <img  src="https://nozze-next.netlify.app/_ipx/w_640,q_75/%2F_next%2Fstatic%2Fmedia%2Fshape-1.27e394ad.png?url=%2F_next%2Fstatic%2Fmedia%2Fshape-1.27e394ad.png&w=640&q=75" />

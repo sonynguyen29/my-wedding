@@ -47,11 +47,14 @@ const AGENDA = [
               index,
             ) => (
               <div class="splide__slide relative w-full cursor-pointer">
-                <Image
-                  class="lg:max-h-[700px] object-cover"
-                  src={index === 0 ? AGENDA_1 : AGENDA_2}
-                  alt=""
-                />
+                <div class="w-full lg:h-[700px]">
+                  <Image
+                    class:list={["w-full h-full object-cover"]}
+                    src={index === 0 ? AGENDA_1 : AGENDA_2}
+                    alt=""
+                    style={`object-position: top -6.5cm right 0;`}
+                  />
+                </div>
                 <div class="lg:absolute right-5 bottom-5 top-5 bg-white lg:max-w-[400px] p-12 border border-[#c8a898] lg:border-0">
                   <div class="flex flex-col gap-7 items-center justify-center h-full">
                     <h2 class="name relative pb-10 text-4xl font-OT">{name}</h2>
@@ -104,7 +107,7 @@ const AGENDA = [
     perPage: 1,
     arrows: false,
     autoplay: true,
-    interval: 2000,
+    interval: 3000,
     gap: 20,
   });
 
