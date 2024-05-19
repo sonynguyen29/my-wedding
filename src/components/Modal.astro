@@ -42,7 +42,7 @@ const BANK_INFOMATION = [
         BANK_INFOMATION.map((item, index) => (
           <div
             class:list={[
-              "grid grids-rows-[260px_1fr] p-3",
+              "grid grids-rows-[260px_1fr] md:p-3",
               {
                 "": index === 1,
               },
@@ -58,9 +58,13 @@ const BANK_INFOMATION = [
               />
             </div>
             <div class="flex flex-col gap-1 px-1 md:gap-3 md:px-3">
-              <h2 class="text-lg font-semibold">{item.bank_holder}</h2>
+              <h2 class="text:sm md:text-lg font-medium md:font-semibold">
+                {item.bank_holder}
+              </h2>
               <div class="flex flex-row justify-between items-center">
-                <h2 class="text-lg font-semibold">{item.bank_number}</h2>
+                <h2 class="text:sm md:text-lg font-medium md:font-semibold">
+                  {item.bank_number}
+                </h2>
                 <button
                   class="copy-bank-number rounded-md border border-[#c8a898] p-2 text-[#c8a898] font-semibold"
                   data-copy={item.bank_number_copy}
