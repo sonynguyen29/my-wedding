@@ -1,99 +1,95 @@
 ---
 const headerClass = "font-petit sm:text-2xl md:text-6xl";
 const heartClass = "text-[#c8a898cc] md:text-4xl";
-const countDownTextClass = "text-[#868686] font-semibold text-base md:text-3xl font-petit";
-const countDownNumberClass = "text-[#c8a898] font-medium text-md md:text-6xl font-OT";
+const countDownTextClass =
+  "text-[#868686] font-semibold text-base md:text-3xl font-petit";
+const countDownNumberClass =
+  "text-[#c8a898] font-medium text-md md:text-6xl font-OT";
 ---
+
 <div class="bg-primary w-full p-4">
-    <div class="border border-[#fff]">
-        <div class="flex flex-col justify-center items-center gap-10 w-full my-5 md:my-20">
-            <div class="flex flex-row justify-between items-center gap-4">
-                <div class={headerClass}>We</div>
-                <ion-icon class={heartClass} name="heart"></ion-icon>
-                <div class={headerClass}>Are</div>
-                <ion-icon class={heartClass} name="heart"></ion-icon>
-                <div class={headerClass}>Getting</div>
-                <ion-icon class={heartClass} name="heart"></ion-icon>
-                <div class={headerClass}>Married</div>
-            </div>
-            <div>
-                <p class="font-petit font-bold text-base md:text-3xl">Date: Saturday, 13 July 2024</p>
-            </div>
-            <div class="flex flex-row justify-center items-center gap-5 md:gap-20">
-                <div class="flex flex-col justify-center items-center gap-4">
-                    <span id="countdonw-days" class={countDownNumberClass}>
-                        -
-                    </span>
-                    <span class={countDownTextClass}>
-                        Days
-                    </span>
-                </div>
-                <div class="flex flex-col justify-center items-center gap-4">
-                    <span id="countdonw-hours" class={countDownNumberClass}>
-                        -
-                    </span>
-                    <span class={countDownTextClass}>
-                        Hours
-                    </span>
-                </div>
-                <div class="flex flex-col justify-center items-center gap-4">
-                    <span id="countdonw-min" class={countDownNumberClass}>
-                        -
-                    </span>
-                    <span class={countDownTextClass}>
-                        Min
-                    </span>
-                </div>
-                <div class="flex flex-col justify-center items-center gap-4">
-                    <span id="countdonw-sec" class={countDownNumberClass}>
-                        -
-                    </span>
-                    <span class={countDownTextClass}>
-                        Sec
-                    </span>
-                </div>
-            </div>
+  <div class="border border-[#fff]">
+    <div
+      class="flex flex-col justify-center items-center gap-10 w-full my-5 md:my-20"
+    >
+      <div class="flex flex-row justify-between items-center gap-4">
+        <div class={headerClass}>We</div>
+        <ion-icon class={heartClass} name="heart"></ion-icon>
+        <div class={headerClass}>Are</div>
+        <ion-icon class={heartClass} name="heart"></ion-icon>
+        <div class={headerClass}>Getting</div>
+        <ion-icon class={heartClass} name="heart"></ion-icon>
+        <div class={headerClass}>Married</div>
+      </div>
+      <div>
+        <p class="font-petit font-bold text-base md:text-3xl">
+          Date: Sunday, 7 July 2024
+        </p>
+      </div>
+      <div class="flex flex-row justify-center items-center gap-5 md:gap-20">
+        <div class="flex flex-col justify-center items-center gap-4">
+          <span id="countdonw-days" class={countDownNumberClass}> - </span>
+          <span class={countDownTextClass}> Days </span>
         </div>
+        <div class="flex flex-col justify-center items-center gap-4">
+          <span id="countdonw-hours" class={countDownNumberClass}> - </span>
+          <span class={countDownTextClass}> Hours </span>
+        </div>
+        <div class="flex flex-col justify-center items-center gap-4">
+          <span id="countdonw-min" class={countDownNumberClass}> - </span>
+          <span class={countDownTextClass}> Min </span>
+        </div>
+        <div class="flex flex-col justify-center items-center gap-4">
+          <span id="countdonw-sec" class={countDownNumberClass}> - </span>
+          <span class={countDownTextClass}> Sec </span>
+        </div>
+      </div>
     </div>
-</div>  
+  </div>
+</div>
 
 <script>
-    const daysEl = document.getElementById('countdonw-days');
-    const hoursEl = document.getElementById('countdonw-hours');
-    const minEl = document.getElementById('countdonw-min');
-    const secEl = document.getElementById('countdonw-sec');
+  const daysEl = document.getElementById("countdonw-days");
+  const hoursEl = document.getElementById("countdonw-hours");
+  const minEl = document.getElementById("countdonw-min");
+  const secEl = document.getElementById("countdonw-sec");
 
-    function updateCountdown() {
+  function updateCountdown() {
     // Set the target date (July 13, 2024)
-    const targetDate = new Date('July 13, 2024 00:00:00').getTime();
+    let targetDate = new Date("July 7, 2024 00:00:00").getTime();
+    let groomTargetDate = new Date("July 13, 2024 00:00:00").getTime();
 
     // Get the current date and time
     const currentDate = new Date().getTime();
 
+    // Check if the countdown has reached zero
+    if (targetDate - currentDate <= 0) {
+      clearInterval(countdownInterval);
+      console.log("Countdown expired!");
+
+      targetDate = groomTargetDate;
+    }
+
     // Calculate the difference in milliseconds
-    const difference = targetDate - currentDate;
+    let difference = targetDate - currentDate;
 
     // Calculate days, hours, minutes, and seconds
     const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const hours = Math.floor(
+      (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+    );
     const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-    if(daysEl) daysEl.innerHTML = `${days < 10 ? `0${days}` : days}`
-    if(hoursEl) hoursEl.innerHTML = `${hours < 10 ? `0${hours}` : hours}`
-    if(minEl) minEl.innerHTML = `${minutes < 10 ? `0${minutes}` : minutes}`
-    if(secEl) secEl.innerHTML = `${seconds < 10 ? `0${seconds}` : seconds}`
+    if (daysEl) daysEl.innerHTML = `${days < 10 ? `0${days}` : days}`;
+    if (hoursEl) hoursEl.innerHTML = `${hours < 10 ? `0${hours}` : hours}`;
+    if (minEl) minEl.innerHTML = `${minutes < 10 ? `0${minutes}` : minutes}`;
+    if (secEl) secEl.innerHTML = `${seconds < 10 ? `0${seconds}` : seconds}`;
+  }
 
-    // Check if the countdown has reached zero
-    if (difference <= 0) {
-        clearInterval(countdownInterval);
-        console.log('Countdown expired!');
-    }
-    }
+  // Update the countdown every second
+  const countdownInterval = setInterval(updateCountdown, 1000);
 
-    // Update the countdown every second
-    const countdownInterval = setInterval(updateCountdown, 1000);
-
-    // Initial call to display the countdown immediately
-    updateCountdown();
+  // Initial call to display the countdown immediately
+  updateCountdown();
 </script>
