@@ -1,7 +1,6 @@
 ---
 import "@splidejs/splide/css/core";
 import "@splidejs/splide/css";
-import Splide from "@splidejs/splide";
 import AGENDA_1 from "../assets/images/gallery/hue/_VPH3365.jpg";
 import AGENDA_2 from "../assets/images/gallery/dalat/3P4A1306.jpg";
 import { Image } from "astro:assets";
@@ -99,7 +98,7 @@ const AGENDA = [
 
   @media screen and (min-width: 1024px) {
     .splide__slide img {
-      object-position: top -6.5cm right 0;
+      object-position: top -5cm right 0;
     }
   }
 </style>
@@ -114,6 +113,7 @@ const AGENDA = [
     autoplay: true,
     interval: 2000,
     gap: 20,
+    padding: { right: "2.5rem", left: "2.5rem" },
   });
 
   partnerSlider.mount();

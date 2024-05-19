@@ -5,26 +5,26 @@ import STEP_2 from "./../assets/images/step_2.png";
 import STEP_3 from "./../assets/images/step_3.png";
 const DATA = [
     {
-        "time": "22 Feb, 2019",
-        "title": "How we meet",
-        "description": "Consectetur adipiscing elit. Fringilla at risus orci, tempus facilisi sed. Enim tortor, faucibus netus orci donec volutpat adipiscing. Sit condimentum elit convallis libero. Nunc in eu tellus ipsum placerat.",
+        "time": "Nov, 2019",
+        "title": "Tuy Xa Mà Gần",
+        "description": "Sau chuyến Camping Mondulkiri (Campuchia) với chặng đường 1000km từ 2 người xa lạ, không quen biết chúng mình đã biết nhau. Dường như sự đồng điệu về sở thích Camping rừng rú, trèo đèo lội suối, thích Đà Lạt.... tại thời điểm đó đã mang tụi mình tới với nhau và cho tới hiện tại.",
         "image": STEP_1,
     },
     {
-        "time": "22 Feb, 2019",
-        "title": "How we meet",
-        "description": "Consectetur adipiscing elit. Fringilla at risus orci, tempus facilisi sed. Enim tortor, faucibus netus orci donec volutpat adipiscing. Sit condimentum elit convallis libero. Nunc in eu tellus ipsum placerat.",
+        "time": "Dec 2019 - Jun 2024",
+        "title": "Hành Trình",
+        "description": "Chặng đường 4 năm bên nhau tuy không ngắn không dài nhưng dường như là `đủ` để tìm hiểu về nhau. Tình yêu của tụi mình khá đơn giản, vẫn tiếp tục công việc cá nhân, sắp xếp thời gian để tham gia một vài chuyến trekking, camping cùng những người anh em, ghé thăm gia đình vào những kỳ nghỉ lễ. Và tụi mình đã bên nhau như thế....^^! ",
         "image": STEP_2,
     },
     {
-        "time": "22 Feb, 2019",
-        "title": "How we meet",
-        "description": "Consectetur adipiscing elit. Fringilla at risus orci, tempus facilisi sed. Enim tortor, faucibus netus orci donec volutpat adipiscing. Sit condimentum elit convallis libero. Nunc in eu tellus ipsum placerat.",
+        "time": "July 2024",
+        "title": "Khởi Đầu Mới",
+        "description": "Và từ đây tụi mình đã về chung nhà với nhau, kết hôn không phải là đích đến mà kết hôn là một khởi đầu mới cho tình yêu của tụi mình.",
         "image": STEP_3,
     }
 ]
 ---
-<div>
+<section id="our-story">
     <div class="flex flex-col justify-center items-center gap-5">
         <h5 class="text-3xl font-petit">Our Story</h5>
         <h4 class="text-5xl font-OT">How It Happend</h4>
@@ -49,7 +49,7 @@ const DATA = [
                                 <img src="https://nozze-next.netlify.app/_ipx/w_640,q_75/%2F_next%2Fstatic%2Fmedia%2Fshape-2.f0a46a86.png?url=%2F_next%2Fstatic%2Fmedia%2Fshape-2.f0a46a86.png&w=640&q=75" />
                             </div>
                         )}
-                        {index === 1 && (
+                    {index === 1 && (
                             <div class="absolute top-[-80px] right-[-80px] z-[-1]">
                                 <img  src="https://nozze-next.netlify.app/_ipx/w_384,q_75/%2F_next%2Fstatic%2Fmedia%2Fshape-3.efbcdb12.png?url=%2F_next%2Fstatic%2Fmedia%2Fshape-3.efbcdb12.png&w=384&q=75" />
                             </div>
@@ -89,7 +89,7 @@ const DATA = [
             <div class="invisible lg:visible round-shape"></div>
         </div>
     </div>
-</div>
+</section>
 
 <style>
     .heart {
