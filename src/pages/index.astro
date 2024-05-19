@@ -8,10 +8,12 @@ import PhotoGallery from "../components/PhotoGallery.astro";
 import Invitation from "../components/Invitation.astro";
 import Agenda from "../components/Agenda.astro";
 import BackToTop from "../components/BackToTop.astro";
+import Modal from "../components/Modal.astro";
 ---
 
 <Layout title="Đạt & Yến - Save the date">
   <main
+    id="container"
     class="max-w-auto lg:max-w-[1440px] mx-auto px-5 md:px-3 flex flex-col gap-32 md:gap-40 overflow-hidden"
   >
     <NavigationBar />
@@ -21,6 +23,22 @@ import BackToTop from "../components/BackToTop.astro";
     <Invitation />
     <Agenda />
     <PhotoGallery />
+    <BackToTop />
   </main>
-  <BackToTop />
+  <div id="modalBackground" class="modal-background"></div>
+  <Modal />
 </Layout>
+
+<style>
+  .modal-background {
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+  }
+  .modal-background.active {
+    display: block;
+  }
+</style>

@@ -5,20 +5,20 @@ import STEP_2 from "./../assets/images/step_2.png";
 import STEP_3 from "./../assets/images/step_3.png";
 const DATA = [
     {
-        "time": "Nov, 2019",
-        "title": "Tuy Xa Mà Gần",
+        "time": "Nov 2019",
+        "title": "Fisrt Look",
         "description": "Sau chuyến Camping Mondulkiri (Campuchia) với chặng đường 1000km từ 2 người xa lạ, không quen biết chúng mình đã biết nhau. Dường như sự đồng điệu về sở thích Camping rừng rú, trèo đèo lội suối, thích Đà Lạt.... tại thời điểm đó đã mang tụi mình tới với nhau và cho tới hiện tại.",
         "image": STEP_1,
     },
     {
         "time": "Dec 2019 - Jun 2024",
-        "title": "Hành Trình",
+        "title": "Đồng Hành",
         "description": "Chặng đường 4 năm bên nhau tuy không ngắn không dài nhưng dường như là `đủ` để tìm hiểu về nhau. Tình yêu của tụi mình khá đơn giản, vẫn tiếp tục công việc cá nhân, sắp xếp thời gian để tham gia một vài chuyến trekking, camping cùng những người anh em, ghé thăm gia đình vào những kỳ nghỉ lễ. Và tụi mình đã bên nhau như thế....^^! ",
         "image": STEP_2,
     },
     {
         "time": "July 2024",
-        "title": "Khởi Đầu Mới",
+        "title": "Sự Khởi Đầu Mới",
         "description": "Và từ đây tụi mình đã về chung nhà với nhau, kết hôn không phải là đích đến mà kết hôn là một khởi đầu mới cho tình yêu của tụi mình.",
         "image": STEP_3,
     }
@@ -27,7 +27,7 @@ const DATA = [
 <section id="our-story">
     <div class="flex flex-col justify-center items-center gap-5">
         <h5 class="text-3xl font-petit">Our Story</h5>
-        <h4 class="text-5xl font-OT">How It Happend</h4>
+        <h4 class="text-5xl font-OT">Từ Điểm Bắt Đầu</h4>
         <img src="https://nozze-next.netlify.app/_ipx/w_256,q_75/%2F_next%2Fstatic%2Fmedia%2Fsection-title.41f9d59f.png?url=%2F_next%2Fstatic%2Fmedia%2Fsection-title.41f9d59f.png&w=256&q=75" />
     </div>
     <div class="relative story-timeline flex flex-col gap-52 md:gap-24 pt-[8rem]">
@@ -61,7 +61,7 @@ const DATA = [
                             <div class="absolute top-[-80px] left-[-80px] z-[-1]">
                                 <img  src="https://nozze-next.netlify.app/_ipx/w_384,q_75/%2F_next%2Fstatic%2Fmedia%2Fshape-5.5e0b03f0.png?url=%2F_next%2Fstatic%2Fmedia%2Fshape-5.5e0b03f0.png&w=384&q=75" />
                             </div>
-                            <div class="absolute bottom-[-75px] left-[-85px] z-[-1]">
+                            <div class="absolute bottom-[=-75px] left-[-85px] z-[-1]">
                                 <img src="https://nozze-next.netlify.app/_ipx/w_640,q_75/%2F_next%2Fstatic%2Fmedia%2Fshape-6.b49c233b.png?url=%2F_next%2Fstatic%2Fmedia%2Fshape-6.b49c233b.png&w=640&q=75" />
                             </div>
                         )}
@@ -75,11 +75,9 @@ const DATA = [
                     <span class="heart hidden lg:flex justify-center items-center">
                         <ion-icon class="text-[#5d7c78] text-3xl" name="heart"></ion-icon>
                     </span>
-                    <div class={`flex flex-col justify-center items-center ${index === 1 ? 'lg:items-end' : 'lg:item-start'} gap-5 h-full`}>
-                        <div>
-                            <div class="text-[#c8a898] text-lg mb-3">{item.time}</div>
-                            <div class="text-5xl font-OT">{item.title}</div>
-                        </div>
+                    <div class={`flex flex-col justify-center items-center ${index === 1 ? 'lg:items-end' : 'lg:items-start'} h-full`}>
+                        <div class="text-[#c8a898] text-lg mb-3">{item.time}</div>
+                        <div class="text-4xl md:text-5xl font-OT mb-5">{item.title}</div>
                         <div class={`text-lg font-light text-center ${index === 1 ? 'lg:text-right' : 'lg:text-left'}`}>{item.description}</div>
                     </div>
                 </div>

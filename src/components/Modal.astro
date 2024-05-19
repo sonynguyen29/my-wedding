@@ -1,0 +1,146 @@
+---
+import { Image } from "astro:assets";
+import TECHCOMBANK from "../assets/images/techcombank.png";
+import COPY from "../assets/images/copy.png";
+const BANK_INFOMATION = [
+  {
+    bank: "Techcombank",
+    bank_holder: "NGUYEN NGUYEN THANH DAT",
+    bank_number: "4739 7979 97",
+    bank_number_copy: "4739797997",
+    bank_image: TECHCOMBANK,
+  },
+  {
+    bank: "Techcombank",
+    bank_holder: "NGUYEN NGUYEN THANH DAT",
+    bank_number: "4739 7979 97",
+    bank_number_copy: "4739797997",
+    bank_image: TECHCOMBANK,
+  },
+];
+---
+
+<style>
+  .modal {
+    display: none;
+    opacity: 0;
+  }
+  .modal.active {
+    display: flex;
+    opacity: 100;
+  }
+</style>
+
+<div
+  id="myModal"
+  class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 modal transition-all duration-200 mx-4"
+>
+  <div class="bg-white rounded-lg shadow-lg lg:max-w-[700px] p-6">
+    <h2 class="text-2xl font-bold mb-4">Mừng Cưới</h2>
+    <div class="grid grid-cols-2 divide-x">
+      {
+        BANK_INFOMATION.map((item, index) => (
+          <div
+            class:list={[
+              "grid grids-rows-[260px_1fr] p-3",
+              {
+                "": index === 1,
+              },
+            ]}
+          >
+            <div class="w-full text-center">
+              <Image
+                class="text-center"
+                src={item.bank_image}
+                alt=""
+                width={226}
+                height={258}
+              />
+            </div>
+            <div class="flex flex-col gap-3 px-3">
+              <h2 class="text-lg font-semibold">{item.bank_holder}</h2>
+              <div class="flex flex-row justify-between items-center">
+                <h2 class="text-lg font-semibold">{item.bank_number}</h2>
+                <button
+                  class="copy-bank-number rounded-md border border-[#c8a898] p-2 text-[#c8a898] font-semibold"
+                  data-copy={item.bank_number_copy}
+                >
+                  <Image src={COPY} alt="" width={25} height={25} />
+                  <span class="hidden">Copied!</span>
+                </button>
+                <textarea id="copyText" class="hidden">
+                  {item.bank_number_copy}
+                </textarea>
+              </div>
+              <div />
+            </div>
+          </div>
+        ))
+      }
+    </div>
+    <p class="my-4">
+      Đừng quên gửi lời chúc tuyệt vời đến tụi mình nhé. Cảm ơn các rất nhiều!
+    </p>
+    <div class="flex justify-end">
+      <button
+        id="closeModalBtn"
+        class="px-4 py-2 text-black bg-red-500 rounded border border-[#c8a898] text-[#c8a898] hover:bg-[#c8a898] hover:text-white transition-all duration-300"
+        >Đóng</button
+      >
+    </div>
+  </div>
+</div>
+
+<script>
+  // JavaScript to handle modal open and close
+  const openModalBtn = document.getElementById("openModalBtn");
+  const closeModalBtn = document.getElementById("closeModalBtn");
+  const modal = document.getElementById("myModal");
+  const body = document.querySelector("body");
+  const modalBackground = document.getElementById("modalBackground");
+
+  openModalBtn?.addEventListener("click", () => {
+    modal?.classList.add("active");
+    body?.classList.add("overflow-hidden");
+    modalBackground?.classList.add("active");
+  });
+
+  closeModalBtn?.addEventListener("click", () => {
+    modal?.classList.remove("active");
+    modalBackground?.classList.remove("active");
+    body?.classList.remove("overflow-hidden");
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target == modal) {
+      modal?.classList.remove("active");
+      modalBackground?.classList.remove("active");
+      body?.classList.remove("overflow-hidden");
+    }
+  });
+
+  const copyEls = document.querySelectorAll(".copy-bank-number");
+
+  copyEls.forEach((element) => {
+    element.addEventListener("click", (e) => {
+      const number = element.getAttribute("data-copy") || "4739797997";
+      const image = element.querySelector("img");
+      const text = element.querySelector("span");
+      // Copy the text inside the text field
+      navigator.clipboard
+        .writeText(number)
+        .then(() => {
+          if (image?.classList.contains("hidden")) {
+            image?.classList.remove("hidden");
+            text?.classList.add("hidden");
+          } else {
+            image?.classList.add("hidden");
+            text?.classList.remove("hidden");
+          }
+        })
+        .catch((err) => {
+          console.log("Failed to copy text: ", err);
+        });
+    });
+  });
+</script>
