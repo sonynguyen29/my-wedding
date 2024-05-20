@@ -87,7 +87,7 @@ const result = concatAndShuffleArrays(
 ---
 
 <section id="album">
-  <div class="flex flex-row justify-center items-center gap-9 my-5 flex-wrap">
+  <!-- <div class="flex flex-row justify-center items-center gap-9 my-5 flex-wrap">
     {
       TAG_LIST.map(({ tagId, tag }) => (
         <div
@@ -100,35 +100,65 @@ const result = concatAndShuffleArrays(
         </div>
       ))
     }
-  </div>
-  <div
-    class="mixitup-container grid md:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-2 mt-10 max-h-[100rem] overflow-scroll"
-  >
+  </div> -->
+  <div class="mixitup-container mt-10 max-h-[100rem] overflow-scroll">
     {
       result.map((item, index) => (
-        <Image class:list={[item.tag, "mix"]} src={item} alt="" />
+        <Image
+          class:list={[item.tag, "mix object-cover"]}
+          width={350}
+          src={item}
+          alt=""
+        />
       ))
     }
   </div>
-
-  <script>
-    import mixitup from "mixitup";
-
-    var mixer = mixitup(".mixitup-container", {
-      animation: {
-        duration: 700,
-      },
-      callbacks: {
-        onMixClick: function (state: any, originalEvent: any) {
-          const mixButtons = document.querySelectorAll(".mix-button");
-          mixButtons.forEach((item) => {
-            item.classList.remove("!border-[#c8a898cc]", "!text-[#c8a898cc]");
-          });
-
-          const element = this as unknown as HTMLElement;
-          element.classList.add("!border-[#c8a898cc]", "!text-[#c8a898cc]");
-        },
-      },
-    });
-  </script>
 </section>
+
+<style>
+  .mix {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .mix {
+      width: calc(50% - 10px);
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .mix {
+      width: calc(25% - 10px);
+    }
+  }
+</style>
+
+<script>
+  import mixitup from "mixitup";
+  import Masonry from "masonry-layout";
+
+  var elem = document.querySelector(".mixitup-container");
+
+  var msnry = new Masonry(elem, {
+    itemSelector: ".mix",
+    gutter: 10,
+  });
+
+  // var mixer = mixitup(elem, {
+  //   animation: {
+  //     duration: 700,
+  //   },
+  //   callbacks: {
+  //     onMixClick: function (state: any, originalEvent: any) {
+  //       const mixButtons = document.querySelectorAll(".mix-button");
+  //       mixButtons.forEach((item) => {
+  //         item.classList.remove("!border-[#c8a898cc]", "!text-[#c8a898cc]");
+  //       });
+
+  //       const element = this as unknown as HTMLElement;
+  //       element.classList.add("!border-[#c8a898cc]", "!text-[#c8a898cc]");
+  //     },
+  //   },
+  // });
+</script>
