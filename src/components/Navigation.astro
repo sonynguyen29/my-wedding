@@ -1,9 +1,12 @@
 ---
-
+import { Image } from "astro:assets";
+import logo from "../assets/images/logo.png";
 ---
 
 <nav class="flex flex-row justify-between items-center py-3">
-  <div>Logo</div>
+  <div>
+    <Image src={logo} alt="logo" widths={[50, 75, 150, 200]} height={150} />
+  </div>
   <ul class="hidden md:flex flex-row justify-center items-center gap-5">
     <li class="/"><a href="">Trang Chủ</a></li>
     <li><a href="#our-story">Hành Trình</a></li>
