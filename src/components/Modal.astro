@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import TECHCOMBANK from "../assets/images/techcombank.png";
+import TCB from "../assets/images/tcb.png";
+import VCB from "../assets/images/vcb.png";
 import COPY from "../assets/images/copy.png";
 const BANK_INFOMATION = [
   {
@@ -8,14 +9,14 @@ const BANK_INFOMATION = [
     bank_holder: "NGUYEN NGUYEN THANH DAT",
     bank_number: "4739 7979 97",
     bank_number_copy: "4739797997",
-    bank_image: TECHCOMBANK,
+    bank_image: TCB,
   },
   {
-    bank: "Techcombank",
-    bank_holder: "NGUYEN NGUYEN THANH DAT",
-    bank_number: "4739 7979 97",
-    bank_number_copy: "4739797997",
-    bank_image: TECHCOMBANK,
+    bank: "Vietcombank",
+    bank_holder: "NGUYEN THI YEN",
+    bank_number: "0071 0006 54742",
+    bank_number_copy: "007100654742",
+    bank_image: VCB,
   },
 ];
 ---
@@ -50,7 +51,7 @@ const BANK_INFOMATION = [
           >
             <div class="w-full text-center">
               <Image
-                class="text-center"
+                class="text-center max-w-[226px] max-h-[258px] object-cover"
                 src={item.bank_image}
                 alt=""
                 width={226}
