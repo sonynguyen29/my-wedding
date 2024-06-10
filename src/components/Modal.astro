@@ -3,6 +3,8 @@ import { Image } from "astro:assets";
 import TCB from "../assets/images/tcb.png";
 import VCB from "../assets/images/vcb.png";
 import COPY from "../assets/images/copy.png";
+import CLOSE_ICON from "../assets/images/icons-close.png";
+
 const BANK_INFOMATION = [
   {
     bank: "Techcombank",
@@ -34,10 +36,17 @@ const BANK_INFOMATION = [
 
 <div
   id="myModal"
-  class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 modal transition-all duration-200 mx-4"
+  class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 modal transition-all duration-200"
 >
-  <div class="bg-white rounded-lg shadow-lg lg:max-w-[700px] p-2 md:p-6">
-    <h2 class="text-2xl font-bold mb-4">Mừng Cưới</h2>
+  <div
+    class="bg-white rounded-lg shadow-lg w-screen h-screen lg:h-auto lg:w-[700px] lg:max-w-[700px] p-2 md:p-6 overflow-auto"
+  >
+    <div class="flex flex-row justify-between">
+      <h2 class="text-2xl font-bold mb-4">Mừng Cưới</h2>
+      <button id="close-modal-button" class="flex justify-center items-center">
+        <Image src={CLOSE_ICON} alt="close" width={35} height={35} />
+      </button>
+    </div>
     <div class="grid grid-cols-1 md:grid-cols-2 md:divide-x gap-5 md:gap-0">
       {
         BANK_INFOMATION.map((item, index) => (
@@ -100,6 +109,7 @@ const BANK_INFOMATION = [
   // JavaScript to handle modal open and close
   const openModalBtn = document.getElementById("openModalBtn");
   const closeModalBtn = document.getElementById("closeModalBtn");
+  const closeModalBtnIcon = document.getElementById("close-modal-button");
   const modal = document.getElementById("myModal");
   const body = document.querySelector("body");
   const modalBackground = document.getElementById("modalBackground");
@@ -111,6 +121,12 @@ const BANK_INFOMATION = [
   });
 
   closeModalBtn?.addEventListener("click", () => {
+    modal?.classList.remove("active");
+    modalBackground?.classList.remove("active");
+    body?.classList.remove("overflow-hidden");
+  });
+
+  closeModalBtnIcon?.addEventListener("click", () => {
     modal?.classList.remove("active");
     modalBackground?.classList.remove("active");
     body?.classList.remove("overflow-hidden");
